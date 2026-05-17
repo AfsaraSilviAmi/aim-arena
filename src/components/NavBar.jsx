@@ -2,10 +2,13 @@
 import { Button } from '@heroui/react';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
 
 const NavBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+     const pathname = usePathname()
+
 
     return (
         <div>
@@ -47,19 +50,20 @@ const NavBar = () => {
         </div>
         <ul className="hidden items-center gap-4 md:flex">
           <li>
-            <Link href={"/"}>Home</Link>
+           <Link className={`${pathname === '/' ? 'text-[#ffb703] border-b-[#fb8500] border-b' : ''}`} href={"/"}>Home</Link>
+
           </li>
           <li>
-            <Link href={"/all-facility"}>All Facilities</Link>
+            <Link className={`${pathname === '/all-facility' ? 'text-[#ffb703] border-b-[#fb8500] border-b' : ''}`}  href={"/all-facility"}>All Facilities</Link>
           </li>
           <li>
-            <Link href={"/booking"}>My Bookings</Link>
+            <Link className={`${pathname === '/booking' ? 'text-[#ffb703] border-b-[#fb8500] border-b' : ''}`}  href={"/booking"}>My Bookings</Link>
           </li>
           <li>
-            <Link href={"/add-facility"}>Add Facility</Link>
+            <Link className={`${pathname === '/add-facility' ? 'text-[#ffb703] border-b-[#fb8500] border-b' : ''}`}  href={"/add-facility"}>Add Facility</Link>
           </li>
           <li>
-            <Link href={"/manage-facility"}>Manage My Facilities</Link>
+            <Link className={`${pathname === '/manage-facility' ? 'text-[#ffb703] border-b-[#fb8500] border-b' : ''}`}  href={"/manage-facility"}>Manage My Facilities</Link>
           </li>
         </ul>
         <Link href={"/login"}><Button>Login</Button></Link>
@@ -67,20 +71,21 @@ const NavBar = () => {
       {isMenuOpen && (
         <div className="border-t border-separator md:hidden">
           <ul className="flex flex-col gap-2 p-4">
-            <li>
-            <Link href={"/"}>Home</Link>
+          <li>
+           <Link className={`${pathname === '/' ? 'text-[#ffb703] border-b-[#fb8500] border-b' : ''}`} href={"/"}>Home</Link>
+
           </li>
           <li>
-            <Link href={"/all-facility"}>All Facilities</Link>
+            <Link className={`${pathname === '/all-facility' ? 'text-[#ffb703] border-b-[#fb8500] border-b' : ''}`}  href={"/all-facility"}>All Facilities</Link>
           </li>
           <li>
-            <Link href={"/booking"}>My Bookings</Link>
+            <Link className={`${pathname === '/booking' ? 'text-[#ffb703] border-b-[#fb8500] border-b' : ''}`}  href={"/booking"}>My Bookings</Link>
           </li>
           <li>
-            <Link href={"/add-facility"}>Add Facility</Link>
+            <Link className={`${pathname === '/add-facility' ? 'text-[#ffb703] border-b-[#fb8500] border-b' : ''}`}  href={"/add-facility"}>Add Facility</Link>
           </li>
           <li>
-            <Link href={"/manage-facility"}>Manage My Facilities</Link>
+            <Link className={`${pathname === '/manage-facility' ? 'text-[#ffb703] border-b-[#fb8500] border-b' : ''}`}  href={"/manage-facility"}>Manage My Facilities</Link>
           </li>
           </ul>
         </div>
