@@ -2,14 +2,17 @@ import { Bebas_Neue, Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
+import { ToastContainer } from "react-toastify";
 
 const bebas = Bebas_Neue({
  
   subsets: ["latin"],
   weight: "400",
+   variable: "--font-bebas",
 });
 const inter = Inter({
   subsets: ["latin"],
+   variable: "--font-inter",
 });
 
 export const metadata = {
@@ -21,17 +24,17 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${inter.className} h-full antialiased`}
+      className={`${inter.variable} ${bebas.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
         <NavBar></NavBar>
         
-        <main className="w-11/12 mx-auto">
+        <main className="w-11/12 mx-auto font-inter">
           {children}
         </main>
         <Footer></Footer>
+         <ToastContainer />
         </body>
     </html>
   );
 }
-export { bebas };

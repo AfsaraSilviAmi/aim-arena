@@ -20,8 +20,8 @@ const Footer = () => {
     {/* SOFT FLOATING SHAPES */}
     <g opacity="0.10" filter="blur(0.5px)">
       
-      <circle cx="13" cy="20" r="9" fill="#219ebc" />
-      <circle cx="80" cy="40" r="14" fill="#8ecae6" />
+      <circle cx="13" cy="20" r="10" fill="#219ebc" />
+      <circle cx="80" cy="25" r="12" fill="#8ecae6" />
       
     
 
@@ -50,23 +50,23 @@ const Footer = () => {
 
          
           <div>
-            <h3 className="text-xl font-semibold text-white mb-4">
+            <h3 className="font-bebas text-xl text-white mb-4">
               Contact Us
             </h3>
             <ul className="space-y-3 text-sm text-white">
               <li>
-              <span className='font-bold'>Email:</span> afsarasilvisports@gmail.com
+              <span className='font-bebas'>Email:</span> afsarasilvisports@gmail.com
               </li>
               <li>
-                <span className='font-bold'>Phone:</span> +01234567890
+                <span className='font-bebas'>Phone:</span> +01234567890
               </li>
               <li>
-                <span className='font-bold'>Location:</span> Sports Streets, Bangladesh
+                <span className='font-bebas'>Location:</span> Sports Streets, Bangladesh
               </li>
             </ul>
           </div>
           <div>
-            <h3 className="text-xl font-semibold text-white mb-4">
+            <h3 className="text-xl font-bebas text-white mb-4">
               Quick Links
             </h3>
             <ul className="space-y-3 text-sm text-white">
@@ -115,7 +115,7 @@ const Footer = () => {
 
          
           <div className="space-y-4">
-            <h3 className="text-xl font-semibold text-white">
+            <h3 className="text-xl font-bebas text-white">
               Social Links
             </h3>
           <div className='text-white flex gap-4 text-lg'>
