@@ -41,9 +41,9 @@ const NavBar = () => {
               )}
             </svg>
           </button>
-          <div className='text-xl flex items-center font-semibold'>
+          <Link href={"/"}><div className='text-xl flex items-center font-semibold'>
             <Image src={"/logo.png"} alt="logo" width={40} height={40}></Image> <span className='italic bg-gradient-to-r from-[#023047] via-[#219ebc] to-[#8ecae6] bg-clip-text text-transparent'>Aim<span>Arena</span></span>
-          </div>
+          </div></Link>
         </div>
         <ul className="hidden items-center gap-4 md:flex">
           <li>

@@ -1,6 +1,7 @@
 import { Bebas_Neue, Inter } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
+import Footer from "@/components/Footer";
 
 const bebas = Bebas_Neue({
  
@@ -24,10 +25,11 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-full flex flex-col">
         <NavBar></NavBar>
+        
         <main className="w-11/12 mx-auto">
           {children}
         </main>
-        
+        <Footer></Footer>
         </body>
     </html>
   );
