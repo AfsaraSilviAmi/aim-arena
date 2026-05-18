@@ -12,7 +12,7 @@ const BookingCard = ({facility}) => {
         } = authClient.useSession()
 
         const [hours, setHours] = useState(1)
-         const [date, setDate] = useState(null);
+         const [date, setDate] = useState("");
     if (isPending) return null;
     const user = session?.user
     const pricePerHour = Number(facility.price);
@@ -25,12 +25,13 @@ const BookingCard = ({facility}) => {
             facilityId: facility._id,
             facilityName: facility.facilityName,
             timeSlot: facility.time,
+            imageUrl: facility.imageUrl,
             userId: user.id,
             userImage: user.image,
             userName: user.name,
             userEmail: user.email,
 
-            bookingDate: form.date.value,
+            bookingDate: date,
             hours: Number(form.hours.value),
             pricePerHour,
             totalPrice,
@@ -79,12 +80,13 @@ const BookingCard = ({facility}) => {
   
 </TextField>
                     <div>
-          <TextField name="date" isRequired>
+          <TextField name={date} isRequired>
               <Label>Booking Date</Label>
           
               <Input
                 type="date"
                 className="rounded-2xl"
+                 onChange={(e) => setDate(e.target.value)}
               />
           
               <FieldError/>

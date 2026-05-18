@@ -9,7 +9,11 @@ const AddFacility = () => {
     const onSubmit = async(e)=>{
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
-        const facilities = Object.fromEntries(formData.entries())
+        const facilities = {
+          ...Object.fromEntries(formData.entries()),
+          ownerEmail: user.email,
+          ownerId: user.id
+        } 
 
         const res = await fetch(`http://localhost:8000/facilities`, {
             method: "POST",
@@ -73,27 +77,27 @@ const user = session?.user;
                   <Select.Popover>
                     <ListBox>
                       <ListBox.Item id="Football" textValue="Football">
-                        Football
+                        Football turf
                         <ListBox.ItemIndicator />
                       </ListBox.Item>
                       <ListBox.Item id="Tennis" textValue="Tennis">
-                        Tennis
+                        Tennis court
                         <ListBox.ItemIndicator />
                       </ListBox.Item>
                       <ListBox.Item id="Swimming" textValue="Swimming">
-                        Swimming
+                        Swimming lane
                         <ListBox.ItemIndicator />
                       </ListBox.Item>
                       <ListBox.Item id="Cricket" textValue="Cricket">
-                        Cricket
+                        Cricket feild
                         <ListBox.ItemIndicator />
                       </ListBox.Item>
                       <ListBox.Item id="Basketball" textValue="Basketball">
-                        Basketball
+                        Basketball court
                         <ListBox.ItemIndicator />
                       </ListBox.Item>
                       <ListBox.Item id="Volleyball" textValue="Volleyball">
-                        Volleyball
+                        Volleyball court
                         <ListBox.ItemIndicator />
                       </ListBox.Item>
                     </ListBox>
@@ -134,7 +138,8 @@ const user = session?.user;
     <Label>Available Time Slot</Label>
 
     <Input
-      type="time"
+      type="text"
+      placeholder='ex- 9 am - 10 am'
       className="rounded-2xl"
     />
 
@@ -156,7 +161,7 @@ const user = session?.user;
                 </TextField>
               </div>
 
-              {/* Description */}
+            
               <div className="md:col-span-2">
                 <TextField name="description" isRequired>
                   <Label>Description</Label>
