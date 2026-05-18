@@ -1,3 +1,4 @@
+import BookingCard from '@/components/BookingCard';
 import { Card, Chip } from '@heroui/react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -46,7 +47,7 @@ const FacilitiesDetailsPage = async({params}) => {
                  <div className='flex items-center gap-1'><FaLocationDot /><p>{facility.location}</p></div>
                  </div>
               </Card>
-              <Card className='col-span-1 '>Book</Card>
+             <BookingCard facility={facility} className="col-span-1"></BookingCard>
              </div>
               
         </div>
