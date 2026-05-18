@@ -1,4 +1,5 @@
 'use client'
+import { authClient } from '@/lib/auth-client';
 import { Button, FieldError, Input, Label, ListBox, TextArea, TextField, Select, Card } from '@heroui/react';
 import React from 'react';
 import { toast } from 'react-toastify';
@@ -28,6 +29,14 @@ const AddFacility = () => {
 
 
     }
+    const {
+  data: session,
+  isPending
+} = authClient.useSession();
+
+if (isPending) return null;
+
+const user = session?.user;
     return (
         <div>
             <div className='my-5'>
@@ -157,6 +166,19 @@ const AddFacility = () => {
                   />
                   <FieldError />
                 </TextField>
+
+
+                <TextField name="email" className="mt-2">
+        <Label>Owner Email</Label>
+
+  <Input
+    value={user?.email || ""}
+    readOnly
+    className="rounded-2xl "
+  />
+
+  <FieldError />
+</TextField>
               </div>
             </div>
 

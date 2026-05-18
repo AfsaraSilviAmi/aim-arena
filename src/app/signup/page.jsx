@@ -7,39 +7,52 @@ import { useRouter } from 'next/navigation';
 import React from 'react';
 import { toast } from 'react-toastify';
 
-const LoginPage = () => {
-      const router = useRouter();
-        const onSubmit = async(e)=>{
-              e.preventDefault();
-            const formData = new FormData(e.currentTarget);
-            const user = Object.fromEntries(formData.entries())
+const SignUpPage = () => {
+    const router = useRouter();
+    const onSubmit = async(e)=>{
+          e.preventDefault();
+        const formData = new FormData(e.currentTarget);
+        const user = Object.fromEntries(formData.entries())
+
+        const { data, error } = await authClient.signUp.email({
+    name:user.name, // required
+    email:user.email, // required
+    password: user.password, // required
+    image: user.image,
     
-            const { data, error } = await authClient.signIn.email({
-        
-        email:user.email, // required
-        password: user.password, // required
-    
-        
-    });
-    if(data){
-        toast.success("Login was Successful!")
-        router.push("/")
+});
+if(data){
+    toast.success("Registration was Successful")
+    router.push("/login")
+}
+else{
+    toast.error(error.message)
+}
+
     }
-    else{
-        toast.error(error.message)
+
+    const handleGoogleSignIn = async() =>{
+        const data = await authClient.signIn.social({
+    provider: "google",
+  });
     }
-    
-        }
-        const handleGoogleSignIn = async() =>{
-                const data = await authClient.signIn.social({
-            provider: "google",
-          });
-            }
     return (
-        <div className='my-5'>
-             <div className='flex justify-center items-center h-[80vh]'>
-             <Form onSubmit={onSubmit} className="flex w-96 flex-col gap-4 bg-gray-50 p-6 rounded-lg shadow-xs" >
-                <h1 className='font-bebas text-3xl text-center'>Login Your Account</h1>
+        <div>
+            <div className='flex justify-center items-center my-5'>
+             <Form onSubmit={onSubmit} validationBehavior="aria" className="flex w-96 flex-col gap-4 bg-gray-50 p-6 rounded-lg shadow-xs" >
+                <h1 className='font-bebas text-3xl text-center'>Register Your Account</h1>
+                 <TextField
+        isRequired
+        name="name"
+        type="text"
+        
+      >
+        <Label className='font-bebas text-lg'>Name</Label>
+        <Input placeholder="Enter Your Name" />
+        <FieldError />
+      </TextField>
+    
+
       <TextField
         isRequired
         name="email"
@@ -55,11 +68,24 @@ const LoginPage = () => {
         <Input placeholder="Enter Your email address" />
         <FieldError />
       </TextField>
+
+        <TextField
+       
+        name="image"
+        type="url"
+       
+      >
+        <Label className='font-bebas text-lg'>Photo URL</Label>
+        <Input placeholder="image URL" />
+        <FieldError />
+      </TextField>
       <TextField
         isRequired
+      
         name="password"
         type="password"
         validate={(value) => {
+             if (!value) return "Password is required";
           if (value.length < 6) {
             return "Password must be at least 8 characters";
           }
@@ -81,7 +107,7 @@ const LoginPage = () => {
       <div className="flex gap-2">
         <Button type="submit" className="font-bebas bg-linear-to-r from-[#023047] via-[#219ebc] to-[#8ecae6] border-[#ffb703] border-2 transition-all duration-300 hover:scale-110 hover:from-[#ffb703] hover:to-blue-200 hover:border-blue-500 animate__animated animate__pulse animate__infinite animate__slow px-7 text-lg">
          
-          Login
+          Register
         </Button>
         <Button type="reset" className="bg-gray-200 text-[#219ebc] hover:scale-106 transition-all duration-300">
           Reset
@@ -89,7 +115,7 @@ const LoginPage = () => {
       </div>
      <div className="flex items-center gap-4 my-2">
   <div className="flex-1 h-px bg-gray-300" />
-  <span className="text-xl font-bebas text-gray-500">OR</span>
+  <span className="font-bebas text-xl text-gray-500">OR</span>
   <div className="flex-1 h-px bg-gray-300" />
 </div>
       <div>
@@ -99,13 +125,12 @@ const LoginPage = () => {
       </Button>
       </div>
       <div>
-        <p className='font-bebas text-center text-lg'>Do not have an Account yet? Then, <Link href={"/signup"} className='text-[#219ebc]'>Register</Link></p>
+        <p className='font-bebas text-center text-lg'>Already have an Account? Then, <Link href={"/login"} className='text-[#219ebc]'>Login</Link></p>
       </div>
     </Form> 
         </div>
-
         </div>
     );
 };
 
-export default LoginPage;
+export default SignUpPage;

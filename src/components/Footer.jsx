@@ -55,13 +55,13 @@ const Footer = () => {
             </h3>
             <ul className="space-y-3 text-sm text-white">
               <li>
-              <span className='font-bebas'>Email:</span> afsarasilvisports@gmail.com
+              <span className='font-bebas'>Email</span> afsarasilvisports@gmail.com
               </li>
               <li>
-                <span className='font-bebas'>Phone:</span> +01234567890
+                <span className='font-bebas'>Phone</span> +01234567890
               </li>
               <li>
-                <span className='font-bebas'>Location:</span> Sports Streets, Bangladesh
+                <span className='font-bebas'>Location</span> Sports Streets, Bangladesh
               </li>
             </ul>
           </div>
