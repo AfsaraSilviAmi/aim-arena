@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "@heroui/styles"; 
 
+
 .font-bebas {
   font-family: var(--font-bebas);
 }
