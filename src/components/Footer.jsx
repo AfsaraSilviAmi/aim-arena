@@ -17,7 +17,7 @@ const Footer = () => {
   >
     <rect width="100%" height="100%" fill="#000507" />
 
-    {/* SOFT FLOATING SHAPES */}
+ 
     <g opacity="0.10" filter="blur(0.5px)">
       
       <circle cx="13" cy="20" r="10" fill="#219ebc" />
