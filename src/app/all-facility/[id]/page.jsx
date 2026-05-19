@@ -26,8 +26,8 @@ const FacilitiesDetailsPage = async({params}) => {
         <div>
           
              <Link href={"/all-facility"} className='flex items-center gap-4 hover:text-blue-500 mt-3'><IoArrowBack />Go Back to All Facilities</Link>
-             <div className='grid grid-cols-3 gap-3 my-5'>
-                 <Card className='col-span-2'>
+             <div className='grid md:grid-cols-3 gap-3 my-5'>
+                 <Card className='md:col-span-2'>
                <div className="relative w-full h-75">
   <Image
     src={facility.imageUrl}
@@ -67,7 +67,7 @@ const FacilitiesDetailsPage = async({params}) => {
                  </div>
                  
               </Card>
-             <BookingCard facility={facility} className="col-span-1"></BookingCard>
+             <BookingCard facility={facility} className="md:col-span-1"></BookingCard>
              </div>
               
         </div>
