@@ -81,12 +81,12 @@ const FacilitySlider = () => {
           <div className="absolute inset-0 bg-black/40" />
 
           <div className="absolute bottom-6 left-6 z-10 ">
-             <div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl p-4 hidden md:block shadow-xl mb-5 md:w-full">
+             <div className="bg-white/20 backdrop-blur-md border border-white/30 rounded-2xl p-4 hidden lg:block shadow-xl mb-5 md:w-full">
     <p className="text-white mb-3 font-bebas text-xl">
       Book your favorite sports facility and enjoy premium gameplay experience!
     </p>
 
-    <Link href="/booking">
+    <Link href="/all-facility">
       <button className="group flex items-center gap-5 justify-between bg-[#ffb703] hover:bg-[#fb8500] text-black px-4 py-3 rounded-xl transition-all duration-300">
         
         <span className="font-bebas text-xl tracking-wide">

@@ -3,6 +3,7 @@ import { authClient } from '@/lib/auth-client';
 import { Button, Card, FieldError, Input, Label, TextField } from '@heroui/react';
 
 import React, { useState } from 'react';
+import { IoIosFootball } from 'react-icons/io';
 import { toast } from 'react-toastify';
 
 const BookingCard = ({facility}) => {
@@ -60,28 +61,30 @@ const BookingCard = ({facility}) => {
     return (
         <div>
             <Card>
-                <h1>Book Here</h1>
-                <form onSubmit={handleBooking}>
+                <div className='flex justify-center'>
+                    <h1 className='font-bebas text-3xl text-center flex gap-1'><IoIosFootball />Book Here<IoIosFootball /></h1>
+                </div>
+                <form onSubmit={handleBooking} className='space-y-5'>
                     <TextField>
-  <label>Facility Name</label>
+  <label className='font-bebas text-lg'>Facility Name</label>
   <Input value={facility.facilityName} readOnly />
 </TextField>
                     <TextField>
-  <label>Email</label>
+  <label className='font-bebas text-lg'>Email</label>
   <Input value={user?.email || ""} readOnly />
 </TextField>
  <TextField>
-  <label>Price Per Hour (USD)</label>
+  <label className='font-bebas text-lg'>Price Per Hour (USD)</label>
   <Input value={pricePerHour} readOnly />
 </TextField>
                     <TextField>
-  <label>Time SLot</label>
+  <label className='font-bebas text-lg'>Time SLot</label>
   <Input value={facility.time} readOnly />
   
 </TextField>
                     <div>
           <TextField name={date} isRequired>
-              <Label>Booking Date</Label>
+              <Label className='font-bebas text-lg'><span className='text-red-400'>Enter</span> Booking Date</Label>
           
               <Input
                 type="date"
@@ -95,18 +98,19 @@ const BookingCard = ({facility}) => {
 
          <div className='flex flex-col'>
           <TextField name="hours" isRequired>
-            <Label>Hours</Label>
+            <Label className='font-bebas text-lg'><span className='text-red-400'>Enter </span>Hours</Label>
           <Input
         
             type="number"
             min={1}
             value={hours}
             onChange={(e) => setHours(e.target.value)}
+           
           />
           </TextField>
         </div>
-          <div className="font-bold">
-          Total Price: ${totalPrice}
+          <div className="font-bebas text-3xl">
+         <span className=' text-[#8ecae6] p-2 rounded-lg bg-[#023047]'> Total Price: ${totalPrice}</span>
         </div>
          <Button
           type="submit"

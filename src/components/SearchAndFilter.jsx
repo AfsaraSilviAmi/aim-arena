@@ -37,7 +37,7 @@ export default function SearchAndFilter({ initialData }) {
   return (
     <div>
 
-      <div className="flex justify-between">
+      <div className="md:flex justify-between space-y-3">
 
       
        <SearchField>
@@ -63,12 +63,11 @@ export default function SearchAndFilter({ initialData }) {
 </SearchField>
      
         <Dropdown>
-          <Dropdown.Trigger>
-            <button className="px-4 py-2 rounded-xl border bg-white shadow flex items-center gap-2 font-bebas text-xl">
+         
+            <Button className="px-4 py-2 rounded-xl border text-black bg-white text-xl shadow flex items-center gap-2 font-bebas">
               {type === "All" ? "All Types" : type}<CiFilter />
-            </button>
-          </Dropdown.Trigger>
-
+            </Button>
+         
           <Dropdown.Popover className="min-w-55">
             <Dropdown.Menu
               selectionMode="single"
@@ -95,7 +94,7 @@ export default function SearchAndFilter({ initialData }) {
 
      
       { facilities.length > 0 ? 
-      ( <div className='grid grid-cols-3 gap-4'>
+      ( <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-4'>
          { 
          facilities.map(facility =><FacilityCard key={facility._id} facility={facility}></FacilityCard>) }
           </div> ):

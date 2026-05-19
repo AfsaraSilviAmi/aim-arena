@@ -11,7 +11,7 @@ const FeaturedSection = async() => {
                 <h1 className='font-bebas text-4xl flex items-center gap-3'><IoIosFootball />Featured Facilities<IoIosFootball /></h1>
             </div>
             <p className='text-gray-500 text-center'>Discover featured sports venues with premium quality, great locations, and easy booking.</p>
-            <div className='grid grid-cols-3'>
+            <div className='grid md:grid-cols-2 lg:grid-cols-3'>
                 {
                     facilities.map(facility => <FacilityCard key={facility._id} facility={facility}></FacilityCard>)
                 }

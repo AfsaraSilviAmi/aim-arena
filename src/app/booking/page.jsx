@@ -16,7 +16,11 @@ const BookingPage = async() => {
             <h1>My Bookings</h1>
             <div>
                 {
-                 bookings.map(booking =><div key={booking._id}>
+                bookings.length === 0? (<div>
+                    <h1>You have not booked anything yet</h1>
+                </div>): (<div>
+                    {
+                         bookings.map(booking =><div key={booking._id}>
                    <div className='flex'>
                      <Image src={booking?.imageUrl} alt={booking.facilityName} width={100} height={100}></Image>
                    <div>
@@ -34,6 +38,8 @@ const BookingPage = async() => {
                    </div>
                    </div>
                  </div>)
+                    }
+                </div>)
                 }
             </div>
         </div>

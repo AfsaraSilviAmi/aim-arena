@@ -1,8 +1,10 @@
 "use client";
 
 import {AlertDialog, Button} from "@heroui/react";
+import { useRouter } from "next/navigation";
 
 export function CancelBooking({bookingId}) {
+  const router = useRouter()
     const handleCancelBooking = async() =>{
         const res = await fetch(`http://localhost:8000/bookings/${bookingId}`,{
             method: "DELETE",
@@ -11,6 +13,12 @@ export function CancelBooking({bookingId}) {
             }
         })
         const data = await res.json()
+
+        if(data){
+          toast.warning("Booking has been cancelled")
+          router.refresh()
+
+        }
     }
   return (
     <AlertDialog>
