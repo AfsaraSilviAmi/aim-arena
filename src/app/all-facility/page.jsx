@@ -1,4 +1,5 @@
 import FacilityCard from '@/components/FacilityCard';
+import SearchAndFilter from '@/components/SearchAndFilter';
 import React from 'react';
 import { FaBasketball } from 'react-icons/fa6';
 
@@ -12,11 +13,7 @@ const AllFacilityPage = async() => {
 
             </div>
             <p className='text-gray-500 text-center'>Check out all our sports facilities and find the perfect place to play, train, and enjoy your favorite game.</p>
-            <div className='grid grid-cols-3 gap-4'>
-                {
-                    facilities.map(facility =><FacilityCard key={facility._id} facility={facility}></FacilityCard>)
-                }
-            </div>
+            <SearchAndFilter initialData = {facilities}></SearchAndFilter>
         </div>
     );
 };
