@@ -1,6 +1,9 @@
 import Image from 'next/image';
 import React from 'react';
-import DeleteButton from '@/components/DeleteButton';
+import DeleteButton from './DeleteButton';
+import EditModal from './EditModal';
+
+
 
 const ManageFacilityCard = ({facility}) => {
     return (
@@ -10,6 +13,9 @@ const ManageFacilityCard = ({facility}) => {
                 <p>{facility.facilityName}</p>
             </div>
              <DeleteButton facilityId={facility._id}></DeleteButton>
+             <EditModal facility={facility}></EditModal>
+             
+
         </div>
     );
 };

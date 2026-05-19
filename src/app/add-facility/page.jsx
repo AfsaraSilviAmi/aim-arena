@@ -1,11 +1,15 @@
 'use client'
 import { authClient } from '@/lib/auth-client';
 import { Button, FieldError, Input, Label, ListBox, TextArea, TextField, Select, Card } from '@heroui/react';
+import { useRouter } from 'next/navigation';
 import React from 'react';
+import { IoIosFootball } from 'react-icons/io';
+
 import { toast } from 'react-toastify';
 
 
 const AddFacility = () => {
+  const router = useRouter()
     const onSubmit = async(e)=>{
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
@@ -25,6 +29,7 @@ const AddFacility = () => {
         const data = await res.json()
         if(data){
             toast.success("Facility has been added")
+            router.push("/all-facility")
 
         }
         else{
@@ -45,7 +50,7 @@ const user = session?.user;
         <div>
             <div className='my-5'>
             <div className='mb-5'>
-                <h1 className='font-semibold text-4xl text-center font-bebas'>Add Your Facility</h1>
+                <h1 className='font-semibold text-4xl text-center font-bebas flex items-center'><IoIosFootball />Add Your Facility<IoIosFootball /></h1>
             </div>
             <Card className='bg-gray-50'>
                 <form onSubmit={onSubmit}

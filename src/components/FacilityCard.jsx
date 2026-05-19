@@ -20,7 +20,7 @@ const FacilityCard = ({facility}) => {
         <div className='my-4'>
             <Card>
                 <div>
-                    <Image src={facility.imageUrl} alt={facility.facilityName} width={120} height={120} className='w-[90%] mx-auto rounded-lg object-cover h-90'></Image>
+                    <Image src={facility.imageUrl} alt={facility.facilityName} width={500} height={500} className='w-[90%] mx-auto rounded-lg object-cover h-90'></Image>
                 </div>
                 <p className='text-3xl font-bebas text-center'>{facility.facilityName}</p>
                 <div className='flex justify-center'>
