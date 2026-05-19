@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
+import { FaBasketball } from "react-icons/fa6";
 
 const slides = [
   {
@@ -21,13 +22,25 @@ const slides = [
     id: 3,
     image:
       "https://i.ibb.co.com/DPYJH6C5/Padel.jpg",
-    title: "Tennis Ground",
+    title: "Tennis Court",
   },
   {
     id: 4,
     image:
       "https://i.ibb.co.com/JRPTP5g3/R-cemment-refaite-neuf-la-piscine-de-la-Butte-aux-Cailles-Paris-est-un-petit-bijou-d-art.jpg",
     title: "Swimming Pool",
+  },
+  {
+    id: 5,
+    image:
+      "https://i.ibb.co.com/9kL78WhL/Cricket-Net-at-Pelican-Grove-MAIA-Estates.jpg",
+    title: "Cricket Feild",
+  },
+  {
+    id: 6,
+    image:
+      "https://i.ibb.co.com/nN2dFN2v/Indoor-Volleyball-Adds-Three-For-2017-UNC-Wilmington-Athletics.jpg",
+    title: "Vollyball court",
   },
 ];
 
@@ -48,7 +61,13 @@ const FacilitySlider = () => {
 
   return (
     <div className="my-10">
-      <div className="relative grid grid-cols-1 lg:grid-cols-3 gap-4 h-[500px]">
+     <div className="flex justify-center">
+       <h1 className="font-bebas text-4xl flex gap-3"><FaBasketball/>Explore Our Facilities<FaBasketball/></h1>
+      
+     </div>
+      <p className="text-gray-500 text-center">Swipe through a variety of sports venues and pick your ideal playing spot.</p>
+    
+      <div className="relative grid grid-cols-1 lg:grid-cols-3 gap-4 h-125 my-7">
         
     
         <div className="lg:col-span-2 relative rounded-3xl overflow-hidden group">

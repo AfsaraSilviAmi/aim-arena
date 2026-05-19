@@ -1,0 +1,23 @@
+import React from 'react';
+import FacilityCard from './FacilityCard';
+import { IoIosFootball } from 'react-icons/io';
+
+const FeaturedSection = async() => {
+     const res = await fetch("http://localhost:8000/featured")
+    const facilities = await res.json()
+    return (
+        <div>
+            <div className='flex justify-center'>
+                <h1 className='font-bebas text-4xl flex items-center gap-3'><IoIosFootball />Featured Facilities<IoIosFootball /></h1>
+            </div>
+            <p className='text-gray-500 text-center'>Discover featured sports venues with premium quality, great locations, and easy booking.</p>
+            <div className='grid grid-cols-3'>
+                {
+                    facilities.map(facility => <FacilityCard key={facility._id} facility={facility}></FacilityCard>)
+                }
+            </div>
+        </div>
+    );
+};
+
+export default FeaturedSection;

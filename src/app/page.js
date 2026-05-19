@@ -1,12 +1,13 @@
 import Banner from "@/components/Banner";
 import FacilitySlider from "@/components/FacilitySlider";
+import FeaturedSection from "@/components/FeaturedSection";
 
 
 export default function Home() {
   return (
     <div>
      <Banner></Banner>
-      HomePage
+     <FeaturedSection></FeaturedSection>
       <FacilitySlider></FacilitySlider>
     </div>
   );
