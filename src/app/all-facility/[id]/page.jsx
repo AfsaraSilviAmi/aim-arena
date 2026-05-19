@@ -1,5 +1,7 @@
 import BookingCard from '@/components/BookingCard';
+import { auth } from '@/lib/auth';
 import { Card, Chip } from '@heroui/react';
+import { headers } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -11,7 +13,14 @@ import { MdPool, MdSportsTennis, MdSportsVolleyball } from 'react-icons/md';
 
 const FacilitiesDetailsPage = async({params}) => {
     const {id} = await params;
-    const res = await fetch(`http://localhost:8000/facilities/${id}`)
+    const {token} = await auth.api.getToken({
+      headers: await headers()
+    })
+    const res = await fetch(`http://localhost:8000/facilities/${id}`, {
+      headers: {
+        authorization: `Bearer ${token}`
+      }
+    })
     const facility = await res.json()
       const iconMap = {
        Basketball: <FaBasketball />,

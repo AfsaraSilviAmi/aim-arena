@@ -1,15 +1,19 @@
 'use client'
+import { authClient } from '@/lib/auth-client';
 import { TrashBin } from '@gravity-ui/icons';
 import { AlertDialog, Button } from '@heroui/react';
 import React from 'react';
 import { toast } from 'react-toastify';
 
 const DeleteButton = ({facilityId, facility}) => {
+   
      const handleDelete = async() =>{
+       const {data:tokenData} = await authClient.token()
         const res = await fetch(`http://localhost:8000/facilities/${facilityId}`,{
             method: "DELETE",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                authorization: `Bearer ${tokenData?.token}`
             }
         })
         const data = await res.json()

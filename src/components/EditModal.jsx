@@ -1,4 +1,5 @@
 "use client"
+import { authClient } from '@/lib/auth-client';
 import { Button, FieldError, Input, Label, ListBox, Modal, Surface, TextArea, TextField, Select } from '@heroui/react';
 import React from 'react';
 import { FaEdit } from 'react-icons/fa';
@@ -9,11 +10,12 @@ const EditModal = ({facility}) => {
         e.preventDefault()
          const formData = new FormData(e.currentTarget);
                 const updatedFacility = Object.fromEntries(formData.entries())
-        
+                 const {data:tokenData} = await authClient.token()
                 const res = await fetch(`http://localhost:8000/facilities/${facility._id}`, {
                     method: "PATCH",
                     headers: {
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
+                        authorization: `Bearer ${tokenData?.token}`
                     },
                     body: JSON.stringify(updatedFacility)
                 })

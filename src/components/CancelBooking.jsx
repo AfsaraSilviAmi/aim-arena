@@ -1,5 +1,6 @@
 "use client";
 
+import { authClient } from "@/lib/auth-client";
 import { TrashBin } from "@gravity-ui/icons";
 import {AlertDialog, Button} from "@heroui/react";
 import { useRouter } from "next/navigation";
@@ -8,10 +9,12 @@ import { toast } from "react-toastify";
 export function CancelBooking({bookingId, booking}) {
   const router = useRouter()
     const handleCancelBooking = async() =>{
+        const {data:tokenData} = await authClient.token()
         const res = await fetch(`http://localhost:8000/bookings/${bookingId}`,{
             method: "DELETE",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                authorization: `Bearer ${tokenData?.token}`
             }
         })
         const data = await res.json()

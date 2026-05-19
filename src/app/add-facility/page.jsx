@@ -18,11 +18,12 @@ const AddFacility = () => {
           ownerEmail: user.email,
           ownerId: user.id
         } 
-
+           const {data:tokenData} = await authClient.token()
         const res = await fetch(`http://localhost:8000/facilities`, {
             method: "POST",
             headers: {
-                "Content-Type": "application/json"
+                "Content-Type": "application/json",
+                authorization: `Bearer ${tokenData?.token}`
             },
             body: JSON.stringify(facilities)
         })
