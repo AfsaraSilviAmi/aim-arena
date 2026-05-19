@@ -39,7 +39,7 @@ const FacilityCard = ({facility}) => {
 
   <div className='flex items-center gap-1'><FaLocationDot /><p>{facility.location}</p></div>
 </div>
-            <Link href={`/all-facility/${facility._id}`}><Button className={`font-bebas bg-linear-to-r from-[#023047] via-[#219ebc] to-[#8ecae6] text-2xl py-6 px-5 border-[#ffb703] border-2 mt-4 transition-all duration-300 hover:scale-105 hover:from-[#ffb703] hover:to-blue-200 hover:border-blue-500 animate__animated animate__pulse animate__infinite animate__slow w-full`}>Book Now</Button></Link>
+            <Link href={`/all-facility/${facility._id}`}><Button className={`font-bebas bg-linear-to-r from-[#023047] via-[#219ebc] to-[#8ecae6] text-2xl py-6 px-5 border-[#ffb703] border-2 mt-4 transition-all duration-300 hover:scale-105 hover:from-[#ffb703] hover:to-blue-200 hover:border-blue-500 animate__animated animate__pulse animate__infinite animate__slow w-full `}>Book Now</Button></Link>
             </Card>
         </div>
     );

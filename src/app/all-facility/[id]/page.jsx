@@ -4,6 +4,7 @@ import { Card, Chip } from '@heroui/react';
 import { headers } from 'next/headers';
 import Image from 'next/image';
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
 import React from 'react';
 import { FaBasketball, FaLocationDot } from 'react-icons/fa6';
 import { GiCricketBat } from 'react-icons/gi';
@@ -21,6 +22,9 @@ const FacilitiesDetailsPage = async({params}) => {
         authorization: `Bearer ${token}`
       }
     })
+    if (!res.ok) {
+    notFound();
+  }
     const facility = await res.json()
       const iconMap = {
        Basketball: <FaBasketball />,

@@ -62,7 +62,7 @@ const FacilitySlider = () => {
   return (
     <div className="my-10">
      <div className="flex justify-center">
-       <h1 className="font-bebas text-4xl flex gap-3"><FaBasketball/>Explore Our Facilities<FaBasketball/></h1>
+       <h1 className="font-bebas text-4xl flex gap-3"><FaBasketball  className="animate-bounce"/>Explore Our Facilities<FaBasketball  className="animate-bounce"/></h1>
       
      </div>
       <p className="text-gray-500 text-center">Swipe through a variety of sports venues and pick your ideal playing spot.</p>

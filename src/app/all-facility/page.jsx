@@ -9,7 +9,7 @@ const AllFacilityPage = async() => {
     return (
         <div className='my-10 space-y-3'>
             <div className='flex justify-center'>
-                <h1 className='font-bebas text-4xl text-center flex gap-3'><FaBasketball/>Check Out All Of Our Facilities<FaBasketball/></h1>
+                <h1 className='font-bebas text-4xl text-center flex gap-3'><FaBasketball  className="animate-bounce"/>Check Out All Of Our Facilities<FaBasketball  className="animate-bounce"/></h1>
 
             </div>
             <p className='text-gray-500 text-center'>Check out all our sports facilities and find the perfect place to play, train, and enjoy your favorite game.</p>

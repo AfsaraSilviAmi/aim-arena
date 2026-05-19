@@ -65,7 +65,7 @@ const BookingCard = ({facility}) => {
         <div>
             <Card>
                 <div className='flex justify-center'>
-                    <h1 className='font-bebas text-3xl text-center flex gap-1'><IoIosFootball />Book Here<IoIosFootball /></h1>
+                    <h1 className='font-bebas text-3xl text-center flex gap-1'><IoIosFootball  className="animate-bounce" />Book Here<IoIosFootball  className="animate-bounce"/></h1>
                 </div>
                 <form onSubmit={handleBooking} className='space-y-5'>
                     <TextField>

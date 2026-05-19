@@ -21,7 +21,7 @@ const Banner = () => {
             <p className="md:w-155">Discover and book top sports facilities near you with ease. From football fields to indoor courts, everything you need to play your game is just a few clicks away.</p>
          </div>
            <Link href={"/all-facility"}>
-            <Button className={`font-bebas bg-linear-to-r from-[#023047] via-[#219ebc] to-[#8ecae6] text-2xl py-6 px-7 border-[#ffb703] border-2 mt-10 transition-all duration-300 hover:scale-110 hover:from-[#ffb703] hover:to-blue-200 hover:border-blue-500 animate__animated animate__pulse animate__infinite animate__slow`}>Explore Facilities</Button>
+            <Button className={`font-bebas bg-linear-to-r from-[#023047] via-[#219ebc] to-[#8ecae6] text-2xl py-6 px-7 border-[#ffb703] border-2 mt-10 transition-all duration-300 hover:scale-110 hover:from-[#ffb703] hover:to-blue-200 hover:border-blue-500 animate__animated animate__pulse animate__infinite animate__slow animate-bounce`}>Explore Facilities</Button>
           </Link>
           </div>
          

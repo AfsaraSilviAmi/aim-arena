@@ -25,7 +25,7 @@ const BookingPage = async() => {
     return (
         <div className='my-7'>
           <div className='flex justify-center my-5'>
-              <h1 className='font-bebas text-4xl flex gap-2'><FaBasketball/>My Bookings<FaBasketball/></h1>
+              <h1 className='font-bebas text-4xl flex gap-2'><FaBasketball  className="animate-bounce"/>My Bookings<FaBasketball  className="animate-bounce"/></h1>
           </div>
           <p className='text-gray-500 text-center'>Monitor your bookings, schedules, and reservation status anytime.</p>
             <div>
