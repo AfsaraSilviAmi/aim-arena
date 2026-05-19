@@ -1,6 +1,7 @@
 "use client"
 import { Button, FieldError, Input, Label, ListBox, Modal, Surface, TextArea, TextField, Select } from '@heroui/react';
 import React from 'react';
+import { FaEdit } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 
 const EditModal = ({facility}) => {
@@ -33,22 +34,22 @@ const EditModal = ({facility}) => {
     return (
         <div>
              <Modal>
-      <Button variant="secondary">Open Contact Form</Button>
+      <Button className="text-[#023047] bg-[#8ecae6] font-bebas text-xl"><FaEdit />Update Facility</Button>
       <Modal.Backdrop>
         <Modal.Container placement="auto">
-          <Modal.Dialog className="sm:max-w-md">
+          <Modal.Dialog className="sm:max-w-lg">
             <Modal.CloseTrigger />
             <Modal.Header>
               <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
-              
+              <FaEdit />
               </Modal.Icon>
-              <Modal.Heading>Contact Us</Modal.Heading>
+              <Modal.Heading className='font-bebas text-2xl'>Update Facility</Modal.Heading>
               
             </Modal.Header>
-            <Modal.Body className="p-6">
+            <Modal.Body className="p-4 ">
               <Surface variant="default">
                <form onSubmit={onSubmit}
-                           className="p-8 space-y-8"
+                           className="space-y-8"
                          >
                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                             
