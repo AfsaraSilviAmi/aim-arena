@@ -5,7 +5,7 @@ import { MdSportsTennis } from "react-icons/md";
 
 export default function Loading() {
   return (
-    <div className="h-screen flex flex-col justify-center items-center bg-white text-center">
+    <div className="h-screen flex flex-col justify-center items-center text-center">
 
       <div className="flex gap-6 text-6xl text-[#219ebc]">
         <IoIosFootball className="animate-bounce" />

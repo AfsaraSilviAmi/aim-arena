@@ -5,6 +5,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import React, { useState } from 'react';
+import Switch from './Switch';
 
 const NavBar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -75,9 +76,13 @@ await authClient.signOut()
             <Link className={`${pathname === '/manage-facility' ? 'text-[#ffb703] border-b-[#fb8500] border-b' : ''}`}  href={"/manage-facility"}>Manage Facilities</Link>
           </li>
         </ul>
+       <div className='flex items-center gap-3'>
+         <div className="flex items-center">
+    <Switch />
+  </div>
         {
             user? (<div>  <Dropdown>
-      <Button aria-label="Menu" className="bg-transparent">
+      <Button  isIconOnly aria-label="Menu" className="bg-transparent min-w-0 p-0 h-auto">
         <Avatar>
         <Avatar.Image alt={user.name} src={user.image} />
         <Avatar.Fallback>{user.name[0]}</Avatar.Fallback>
@@ -107,6 +112,7 @@ await authClient.signOut()
       </Dropdown.Popover>
     </Dropdown></div>): (<div><Link href={"/login"}><Button  className={`font-bebas bg-linear-to-r from-[#023047] via-[#219ebc] to-[#8ecae6] text-lg py-3 px-7 border-[#ffb703] border-2 transition-all duration-300 hover:scale-105 hover:from-[#ffb703] hover:to-blue-200 hover:border-blue-500 animate__animated animate__pulse animate__infinite animate__slow`}>Login</Button></Link></div>)
         }
+       </div>
       </header>
       {isMenuOpen && (
         <div className="border-t border-separator md:hidden">

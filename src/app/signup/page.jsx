@@ -39,7 +39,7 @@ else{
     return (
         <div>
             <div className='flex justify-center items-center my-5'>
-             <Form onSubmit={onSubmit} validationBehavior="aria" className="flex w-96 flex-col gap-4 bg-gray-50 p-6 rounded-lg shadow-xs" >
+             <Form onSubmit={onSubmit} validationBehavior="aria" className="flex w-96 flex-col gap-4 p-6 rounded-lg shadow-md bg-gray-50 dark:bg-gray-950" >
                 <h1 className='font-bebas text-3xl text-center'>Register Your Account</h1>
                  <TextField
         isRequired

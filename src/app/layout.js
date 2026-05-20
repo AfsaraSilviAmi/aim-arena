@@ -3,6 +3,8 @@ import "./globals.css";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { ToastContainer } from "react-toastify";
+import { ThemeProvider } from "next-themes";
+
 
 const bebas = Bebas_Neue({
  
@@ -25,15 +27,21 @@ export default function RootLayout({ children }) {
     <html
       lang="en"
       className={`${inter.variable} ${bebas.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col">
-        <NavBar></NavBar>
+       <ThemeProvider attribute="class"
+  defaultTheme="system"
+  enableSystem
+    disableTransitionOnChange>
+         <NavBar></NavBar>
         
         <main className="w-11/12 mx-auto font-inter">
           {children}
         </main>
         <Footer></Footer>
          <ToastContainer />
+       </ThemeProvider>
         </body>
     </html>
   );

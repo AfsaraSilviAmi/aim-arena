@@ -16,17 +16,17 @@ const AboutSection = () => {
      
         <div>
 
-          <h1 className="text-5xl font-bebas text-[#023047] leading-tight mt-4">
+          <h1 className="text-5xl font-bebas text-[#023047] leading-tight mt-4 dark:text-[#219ebc]">
             Book Premium Sports Facilities Anytime, Anywhere
           </h1>
 
-          <p className="text-gray-600 mt-6 leading-8 text-lg">
+          <p className="text-gray-600 mt-6 leading-8 text-lg dark:text-gray-400">
             AimArena helps sports lovers discover and book top-quality
             facilities for football, cricket, basketball, swimming,
             tennis, volleyball, and more.
           </p>
 
-          <p className="text-gray-500 mt-4 leading-8">
+          <p className="text-gray-500 mt-4 leading-8 dark:text-gray-300">
             Whether you want a quick evening match with friends or a
             professional training environment, AimArena connects you
             with the best sports venues around you.

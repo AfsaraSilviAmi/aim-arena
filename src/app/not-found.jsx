@@ -7,7 +7,7 @@ import { FaVolleyball } from "react-icons/fa6";
 
 const NotFound = () => {
   return (
-    <div className="h-screen flex flex-col justify-center items-center bg-white text-center px-4">
+    <div className="h-screen flex flex-col justify-center items-center text-center px-4">
 
       {/* ICONS */}
       <div className="flex gap-6 text-5xl mb-6 text-[#219ebc]">

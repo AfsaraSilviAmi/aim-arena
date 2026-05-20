@@ -26,10 +26,10 @@ const FacilityCard = ({facility}) => {
                 <div className='flex justify-center'>
                    <div className='items-center flex gap-3'>
                     <Chip className='bg-[#023047] px-6'><p className='text-[#8ecae6] text-3xl font-bebas'> ${facility.price}</p></Chip>
-                   <span className='text-gray-700'>/Per Hour</span>
+                   <span className='text-gray-700 dark:text-gray-400'>/Per Hour</span>
                    </div>
                 </div>
-                <div className="flex items-center justify-center gap-3 text-gray-700 mt-3 text-lg">
+                <div className="flex items-center justify-center gap-3 text-gray-700 dark:text-gray-400 mt-3 text-lg">
   <div className="flex items-center gap-1">
     {iconMap[facility.type]}
     <p>{facility.type}</p>

@@ -53,7 +53,7 @@ const user = session?.user;
             <div className='mb-5'>
                 <h1 className='font-semibold text-4xl text-center font-bebas flex items-center'><IoIosFootball  className="animate-bounce"/>Add Your Facility<IoIosFootball  className="animate-bounce"/></h1>
             </div>
-            <Card className='bg-gray-50'>
+            <Card>
                 <form onSubmit={onSubmit}
             className="p-8 space-y-8"
           >
