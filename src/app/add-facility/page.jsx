@@ -62,7 +62,7 @@ const user = session?.user;
               <div className="md:col-span-2">
                 <TextField name="facilityName" isRequired>
                   <Label>Facility Name</Label>
-                  <Input placeholder="Enter Your Facility Name" className="rounded-2xl" />
+                  <Input placeholder="Enter Your Facility Name" className="rounded-2xl dark:bg-gray-800" />
                   <FieldError />
                 </TextField>
               </div>
@@ -76,7 +76,7 @@ const user = session?.user;
                   placeholder="Select Facility Type"
                 >
                   <Label>Facility Type</Label>
-                  <Select.Trigger className="rounded-2xl">
+                  <Select.Trigger className="rounded-2xl dark:bg-gray-800">
                     <Select.Value />
                     <Select.Indicator />
                   </Select.Trigger>
@@ -113,7 +113,7 @@ const user = session?.user;
              
               <TextField name="location" isRequired>
                   <Label>Location</Label>
-                  <Input placeholder="Enter Location" className="rounded-2xl" />
+                  <Input placeholder="Enter Location" className="rounded-2xl dark:bg-gray-800" />
                   <FieldError />
                 </TextField>
 
@@ -123,7 +123,7 @@ const user = session?.user;
                 <Input
                   type="number"
                   placeholder="Enter Price"
-                  className="rounded-2xl"
+                  className="rounded-2xl dark:bg-gray-800"
                 />
                 <FieldError />
               </TextField>
@@ -133,7 +133,7 @@ const user = session?.user;
                 <Label>Capacity</Label>
                 <Input
                   placeholder="Enter Capacity"
-                  className="rounded-2xl"
+                  className="rounded-2xl dark:bg-gray-800"
                 />
                 <FieldError />
               </TextField>
@@ -146,7 +146,7 @@ const user = session?.user;
     <Input
       type="text"
       placeholder='ex- 9 am - 10 am'
-      className="rounded-2xl"
+      className="rounded-2xl dark:bg-gray-800"
     />
 
     <FieldError />
@@ -161,7 +161,7 @@ const user = session?.user;
                   <Input
                     type="url"
                     placeholder="Enter Image URL"
-                    className="rounded-2xl"
+                    className="rounded-2xl dark:bg-gray-800"
                   />
                   <FieldError />
                 </TextField>
@@ -173,7 +173,7 @@ const user = session?.user;
                   <Label>Description</Label>
                   <TextArea
                     placeholder="Describe the facility..."
-                    className="rounded-3xl"
+                    className="rounded-3xl dark:bg-gray-800"
                   />
                   <FieldError />
                 </TextField>
@@ -185,7 +185,7 @@ const user = session?.user;
   <Input
     value={user?.email || ""}
     readOnly
-    className="rounded-2xl "
+    className="rounded-2xl dark:bg-gray-800"
   />
 
   <FieldError />

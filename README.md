@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🏟️ Aim Arena
 
-## Getting Started
 
-First, run the development server:
+## 🎯 Purpose
+Aim Arena is a sports facility booking platform where users can easily discover, view, and book sports venues such as football fields, basketball courts, tennis courts, swimming pools, and more. Owners are able to add their own facilities and manage them.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The goal of this project is to simplify sports facility management and make booking accessible, fast, and user-friendly. This system reflects a real-world sports reservation portal.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🌐 Live URL
+https://aim-arena-dun.vercel.app
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## ✨ Features
+- 🔍 Browse all sports facilities
+- 🏟️ View detailed sports facility pages
+- 📅 Book facilities easily
+- 👤 User authentication (Google sign-in supported)
+- 🧾 My booking page 
+- ➕ Add & manage facilities (owner role)
+- 🎨 Dark/Light theme support
+- 📱 Fully responsive design
+- ⚡ Fast performance with Next.js App Router
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+---
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 📦 NPM Packages Used
+- next
+- react
+- react-dom
+- next-themes
+- @heroui/react
+- react-icons
+- lucide-react
+- react-toastify
+- styled-components
 
-## Deploy on Vercel
+## 🗄️ Backend / Database
+- mongodb
+- better-auth
+## 📦 NPM Packages Used
+- next
+- react
+- react-dom
+- next-themes
+- @heroui/react
+- react-icons
+- lucide-react
+- react-toastify
+- styled-components
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🗄️ Backend / Database
+- mongodb
+- better-auth
+## 📦 NPM Packages Used
+- next
+- react
+- react-dom
+- next-themes
+- @heroui/react
+- react-icons
+- lucide-react
+- react-toastify
+- styled-components
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 🗄️ Backend / Database
+- mongodb
+- better-auth
+- @better-auth/mongodb-adapter
+
+---
+
