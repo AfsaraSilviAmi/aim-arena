@@ -33,7 +33,7 @@ const AboutSection = () => {
           </p>
 
          
-          <div className="grid grid-cols-3 gap-6 mt-10">
+          <div className="grid md:grid-cols-3 gap-6 mt-10">
 
             <div className="bg-[#f1f9fc] rounded-3xl p-6 text-center shadow-md hover:scale-105 transition">
               <h2 className="text-4xl font-bebas text-[#219ebc]">

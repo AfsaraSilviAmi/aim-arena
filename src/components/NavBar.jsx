@@ -22,7 +22,7 @@ await authClient.signOut()
 
     return (
         <div>
-             <nav className="sticky top-0 z-40 w-full border-b border-separator backdrop-blur-lg">
+             <nav className="fixed top-0 left-0 z-40 w-full border-b border-separator bg-white dark:bg-black backdrop-blur-lg">
       <header className="flex h-16 items-center justify-between px-6">
         <div className="flex items-center gap-4">
           <button

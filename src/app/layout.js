@@ -39,7 +39,7 @@ export default function RootLayout({ children }) {
     disableTransitionOnChange>
          <NavBar></NavBar>
         
-        <main className="w-11/12 mx-auto font-inter">
+        <main className="w-11/12 mx-auto font-inter pt-16">
           {children}
         </main>
         <Footer></Footer>
