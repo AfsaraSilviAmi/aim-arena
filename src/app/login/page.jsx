@@ -61,7 +61,7 @@ const LoginPage = () => {
         type="password"
         validate={(value) => {
           if (value.length < 6) {
-            return "Password must be at least 8 characters";
+            return "Password must be at least 6 characters";
           }
           if (!/[A-Z]/.test(value)) {
             return "Password must contain at least one uppercase letter";
@@ -75,7 +75,7 @@ const LoginPage = () => {
       >
         <Label className='font-bebas text-lg'>Password</Label>
         <Input placeholder="Enter your password" />
-        <Description>Must be at least 8 characters with 1 uppercase and 1 lowercase letter</Description>
+        <Description>Must be at least 6 characters with 1 uppercase and 1 lowercase letter</Description>
         <FieldError />
       </TextField>
       <div className="flex gap-2">
