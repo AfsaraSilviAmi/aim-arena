@@ -17,20 +17,19 @@ https://aim-arena-dun.vercel.app
 ## ✨ Features
 - 🔍 Browse all sports facilities
 - 🏟️ View detailed sports facility pages
-- 📅 Book facilities easily
+- 📅 Book facilities easily (for logged in user only)
 - 👤 User authentication (Google sign-in supported)
-- 🧾 My booking page 
+- 🧾 My booking page (for logged in user only)
 - ➕ Add & manage facilities (owner role)
 - 🎨 Dark/Light theme support
 - 📱 Fully responsive design
 - ⚡ Fast performance with Next.js App Router
+- ✅ Proxy is used 
 
 ---
 
 ## 📦 NPM Packages Used
 - next
-- react
-- react-dom
 - next-themes
 - @heroui/react
 - react-icons
@@ -38,33 +37,6 @@ https://aim-arena-dun.vercel.app
 - react-toastify
 - styled-components
 
-## 🗄️ Backend / Database
-- mongodb
-- better-auth
-## 📦 NPM Packages Used
-- next
-- react
-- react-dom
-- next-themes
-- @heroui/react
-- react-icons
-- lucide-react
-- react-toastify
-- styled-components
-
-## 🗄️ Backend / Database
-- mongodb
-- better-auth
-## 📦 NPM Packages Used
-- next
-- react
-- react-dom
-- next-themes
-- @heroui/react
-- react-icons
-- lucide-react
-- react-toastify
-- styled-components
 
 ## 🗄️ Backend / Database
 - mongodb
