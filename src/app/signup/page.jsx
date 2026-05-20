@@ -13,6 +13,16 @@ const SignUpPage = () => {
           e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const user = Object.fromEntries(formData.entries())
+        if (
+  user.password.length < 6 ||
+  !/[A-Z]/.test(user.password) ||
+  !/[a-z]/.test(user.password)
+) {
+  toast.error(
+    "Password must be at least 6 characters and contain uppercase + lowercase letters"
+  );
+  return;
+}
 
         const { data, error } = await authClient.signUp.email({
     name:user.name, // required
@@ -80,30 +90,41 @@ else{
         <FieldError />
       </TextField>
       <TextField
-        isRequired
-      
-        name="password"
-        type="password"
-        validate={(value) => {
-             if (!value) return "Password is required";
-          if (value.length < 6) {
-            return "Password must be at least 8 characters";
-          }
-          if (!/[A-Z]/.test(value)) {
-            return "Password must contain at least one uppercase letter";
-          }
-           if (!/[a-z]/.test(value)) {
-    return "Password must contain at least one lowercase letter";
-  }
-         
-          return null;
-        }}
-      >
-        <Label className='font-bebas text-lg'>Password</Label>
-        <Input placeholder="Enter your password" />
-        <Description>Must be at least 8 characters with 1 uppercase and 1 lowercase letter</Description>
-        <FieldError />
-      </TextField>
+  isRequired
+  name="password"
+  type="password"
+  validate={(value) => {
+    if (!value) return "Password is required";
+
+    if (value.length < 6) {
+      return "Password must be at least 6 characters";
+    }
+
+    if (!/[A-Z]/.test(value)) {
+      return "Password must contain at least one uppercase letter";
+    }
+
+    if (!/[a-z]/.test(value)) {
+      return "Password must contain at least one lowercase letter";
+    }
+
+    return null;
+  }}
+>
+  <Label className="font-bebas text-lg">Password</Label>
+
+  <Input
+    placeholder="Enter your password"
+    minLength={6}
+    pattern="^(?=.*[a-z])(?=.*[A-Z]).{6,}$"
+  />
+
+  <Description>
+    Must be at least 6 characters with 1 uppercase and 1 lowercase letter
+  </Description>
+
+  <FieldError />
+</TextField>
       <div className="flex gap-2">
         <Button type="submit" className="font-bebas bg-linear-to-r from-[#023047] via-[#219ebc] to-[#8ecae6] border-[#ffb703] border-2 transition-all duration-300 hover:scale-110 hover:from-[#ffb703] hover:to-blue-200 hover:border-blue-500 animate__animated animate__pulse animate__infinite animate__slow px-7 text-lg">
          

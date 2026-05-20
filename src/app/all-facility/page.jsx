@@ -4,7 +4,9 @@ import React from 'react';
 import { FaBasketball } from 'react-icons/fa6';
 
 const AllFacilityPage = async() => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/facilities`)
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/facilities`, {
+    cache: "no-store",
+  })
     const facilities = await res.json()
     return (
         <div className='my-10 space-y-3'>

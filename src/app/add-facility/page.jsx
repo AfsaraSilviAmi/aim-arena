@@ -61,7 +61,7 @@ const user = session?.user;
              
               <div className="md:col-span-2">
                 <TextField name="facilityName" isRequired>
-                  <Label>Facility Name</Label>
+                  <Label className='font-bebas text-xl'>Facility Name</Label>
                   <Input placeholder="Enter Your Facility Name" className="rounded-2xl dark:bg-gray-800" />
                   <FieldError />
                 </TextField>
@@ -75,7 +75,7 @@ const user = session?.user;
                   className="w-full"
                   placeholder="Select Facility Type"
                 >
-                  <Label>Facility Type</Label>
+                  <Label className='font-bebas text-xl'>Facility Type</Label>
                   <Select.Trigger className="rounded-2xl dark:bg-gray-800">
                     <Select.Value />
                     <Select.Indicator />
@@ -112,14 +112,14 @@ const user = session?.user;
               </div>
              
               <TextField name="location" isRequired>
-                  <Label>Location</Label>
+                  <Label className='font-bebas text-xl'>Location</Label>
                   <Input placeholder="Enter Location" className="rounded-2xl dark:bg-gray-800" />
                   <FieldError />
                 </TextField>
 
               
               <TextField name="price" type="number" isRequired>
-                <Label>Price Per Hour (USD)</Label>
+                <Label className='font-bebas text-xl'>Price Per Hour (USD)</Label>
                 <Input
                   type="number"
                   placeholder="Enter Price"
@@ -130,7 +130,7 @@ const user = session?.user;
 
              
               <TextField name="capacity" isRequired>
-                <Label>Capacity</Label>
+                <Label className='font-bebas text-xl'>Capacity</Label>
                 <Input
                   placeholder="Enter Capacity"
                   className="rounded-2xl dark:bg-gray-800"
@@ -141,7 +141,7 @@ const user = session?.user;
              
            <div>
   <TextField name="time" isRequired>
-    <Label>Available Time Slot</Label>
+    <Label className='font-bebas text-xl'>Available Time Slot</Label>
 
     <Input
       type="text"
@@ -157,7 +157,7 @@ const user = session?.user;
              
               <div>
                 <TextField name="imageUrl" isRequired>
-                  <Label>Image URL</Label>
+                  <Label className='font-bebas text-xl'>Image URL</Label>
                   <Input
                     type="url"
                     placeholder="Enter Image URL"
@@ -170,7 +170,7 @@ const user = session?.user;
             
               <div className="md:col-span-2">
                 <TextField name="description" isRequired>
-                  <Label>Description</Label>
+                  <Label className='font-bebas text-xl'>Description</Label>
                   <TextArea
                     placeholder="Describe the facility..."
                     className="rounded-3xl dark:bg-gray-800"
@@ -180,7 +180,7 @@ const user = session?.user;
 
 
                 <TextField name="email" className="mt-2">
-        <Label>Owner Email</Label>
+        <Label className='font-bebas text-xl'>Owner Email</Label>
 
   <Input
     value={user?.email || ""}
