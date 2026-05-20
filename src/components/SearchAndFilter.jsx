@@ -16,7 +16,7 @@ export default function SearchAndFilter({ initialData }) {
     if (typeValue && typeValue !== "All") query.append("type", typeValue);
 
     const res = await fetch(
-      `http://localhost:8000/facilities?${query.toString()}`
+      `${process.env.NEXT_PUBLIC_SERVER_URL}/facilities?${query.toString()}`
     );
 
     const data = await res.json();

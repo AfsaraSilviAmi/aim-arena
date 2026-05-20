@@ -17,7 +17,7 @@ const FacilitiesDetailsPage = async({params}) => {
     const {token} = await auth.api.getToken({
       headers: await headers()
     })
-    const res = await fetch(`http://localhost:8000/facilities/${id}`, {
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/facilities/${id}`, {
       headers: {
         authorization: `Bearer ${token}`
       }

@@ -9,7 +9,7 @@ const DeleteButton = ({facilityId, facility}) => {
    
      const handleDelete = async() =>{
        const {data:tokenData} = await authClient.token()
-        const res = await fetch(`http://localhost:8000/facilities/${facilityId}`,{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/facilities/${facilityId}`,{
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",

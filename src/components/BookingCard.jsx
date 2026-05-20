@@ -42,7 +42,7 @@ const BookingCard = ({facility}) => {
         }
         
         const {data:tokenData} = await authClient.token()
-        const res = await fetch(`http://localhost:8000/bookings`,{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/bookings`,{
              method: "POST",
             headers: {
                 "Content-Type": "application/json",

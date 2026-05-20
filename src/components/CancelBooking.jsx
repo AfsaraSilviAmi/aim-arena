@@ -10,7 +10,7 @@ export function CancelBooking({bookingId, booking}) {
   const router = useRouter()
     const handleCancelBooking = async() =>{
         const {data:tokenData} = await authClient.token()
-        const res = await fetch(`http://localhost:8000/bookings/${bookingId}`,{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/bookings/${bookingId}`,{
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json",

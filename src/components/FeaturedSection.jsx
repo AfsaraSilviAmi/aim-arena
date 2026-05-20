@@ -3,7 +3,7 @@ import FacilityCard from './FacilityCard';
 import { IoIosFootball } from 'react-icons/io';
 
 const FeaturedSection = async() => {
-     const res = await fetch("http://localhost:8000/featured")
+     const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/featured`)
     const facilities = await res.json()
     return (
         <div>

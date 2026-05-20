@@ -11,7 +11,7 @@ const EditModal = ({facility}) => {
          const formData = new FormData(e.currentTarget);
                 const updatedFacility = Object.fromEntries(formData.entries())
                  const {data:tokenData} = await authClient.token()
-                const res = await fetch(`http://localhost:8000/facilities/${facility._id}`, {
+                const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/facilities/${facility._id}`, {
                     method: "PATCH",
                     headers: {
                         "Content-Type": "application/json",
@@ -187,7 +187,7 @@ const EditModal = ({facility}) => {
                             
                              className={`font-bebas bg-linear-to-r from-[#023047] via-[#219ebc] to-[#8ecae6] text-2xl py-6 px-7 border-[#ffb703] border-2 mt-10 transition-all duration-300 hover:scale-105 hover:from-[#ffb703] hover:to-blue-200 hover:border-blue-500 animate__animated animate__pulse animate__infinite animate__slow w-full text-white`}
                            >
-                             Add Facility
+                             Update Facility
                            </Button>
                          </form>
               </Surface>
